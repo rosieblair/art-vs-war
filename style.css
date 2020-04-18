@@ -1,0 +1,40 @@
+.line-plot {
+    fill: none;
+    stroke-width: 1.5px;
+    stroke: #333;
+}
+
+.company-label {
+    text-anchor: middle;
+    font-size: 20px;
+    font-weight: semibold;
+    opacity: 0.8;
+}
+
+.axis-label {
+    text-anchor: middle;
+    font-size: 15px;
+    font-weight: semibold;
+}
+
+.grid path,
+.grid line {
+    stroke: #fff;
+}
+
+.background {
+    fill: #eee;
+}
+
+body {
+    font-family: "Helvetica";
+    margin: 0;
+}
+
+.g:hover text {
+    opacity: 1;
+}
+
+#main {
+    margin: 20px;
+}
