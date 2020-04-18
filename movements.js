@@ -39,18 +39,26 @@ var colors = [
             ['#A0D568', '21 - 50 years'],
             ['#4FC1E8', '51 - 100 years'],
             ['#AC92EB', '100+ years']
-        ];
+		];
+		
+Promise.all([
+	d3.csv('movements.csv', dataPreprocessor),
+	d3.csv('MetObjects0.csv')
+]).then(function(dataset) {
+	console.log("Data has been loaded in");
 
-d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
-	console.log(dataset);
+	movementData = dataset[0];
+	metData = dataset[1];
+
+/*            --------- Movement Visualisation start -----------          */
 
 	//returns the earliest year in the dataset
-	var yearMin = d3.min(dataset, function(d) {
+	var yearMin = d3.min(movementData, function(d) {
     	return +d['start_year'];
     });
 
 	//returns the most recent year in the dataset
-    var yearMax = d3.max(dataset, function(d) {
+    var yearMax = d3.max(movementData, function(d) {
     	return +d['end_year'];
     });
 
@@ -70,7 +78,7 @@ d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
     //appends all bars to the timeline
 	svg.append('g')
 		.selectAll('rect')
-		.data(dataset)
+		.data(movementData)
 		.enter()
 		.append('rect')
 		.attr('class', 'bar')
@@ -100,7 +108,7 @@ d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
 	//appends movement names to each bar
 	svg.append('g')
 		.selectAll('bar')
-		.data(dataset)
+		.data(movementData)
 		.enter()
 		.append('text')
 		.text(function(d) {return d.movement;})
@@ -169,6 +177,14 @@ d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
         .attr("x", (svgWidth * 0.56))
         .attr("y", (padding.t / 2))
         .style("font-size", "20px")
-        .text("A timeline of art movements across periods of war.")
+		.text("A timeline of art movements across periods of war.")
+		
+/*            --------- Movement Visualisation End -----------          */
 
-	});
+});
+
+// d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
+// 	console.log(dataset);
+
+	
+// 	});
