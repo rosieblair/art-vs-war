@@ -8,6 +8,14 @@ function dataPreprocessor(row) {
     };
 }
 
+function metDataPreprocessor(row) {
+	// met data row fields that we want? Perhaps I may be missing some
+	return {
+		Object_ID: +row.Object_ID,
+		
+	};
+}
+
 var svg = d3.select('svg');
 
 var svgWidth = +svg.attr('width');
@@ -181,10 +189,9 @@ Promise.all([
 		
 /*            --------- Movement Visualisation End -----------          */
 
+/*            --------- MetData Visualisation Start -----------          */
+
+/*            --------- MetData Visualisation end -----------          */
+
 });
 
-// d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
-// 	console.log(dataset);
-
-	
-// 	});
