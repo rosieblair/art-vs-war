@@ -34,6 +34,7 @@ var chartG = svg.append('g')
 
 d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
 	console.log(dataset);
+    movements = dataset;
 
 	//returns the earliest year in the dataset
 	var yearMin = d3.min(dataset, function(d) {
@@ -57,7 +58,11 @@ d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
         .attr('class', 'xAxis')
         .attr('transform', 'translate('+[padding.l, svgHeight - padding.b]+')')
         .call(timeline);
-    
+
+    updateChart('all-movements')
+
+
+    /*
     //appends all bars to the timeline
 	svg.append('g')
 		.selectAll('rect')
@@ -70,33 +75,111 @@ d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
 		.attr('rx', 5)
 		.attr('ry', 5)
 		.attr('width', function(d) {return ((timelineRange(d.end_year)) - (timelineRange(d.start_year)));})
-		.attr('height', barHeight)
-		.style('fill', 'green'); //need to figure out how to get different colors
+		.attr('height', barHeight);
+		//.style('fill', 'green') //need to figure out how to get different colors
+        //
+        .on('mouseover', function(d, i) {
+            //console.log(d);
+            var hovered = d3.select(this);
+            hovered.classed('hovered', true);
+            //hovered.append('text')
+            //    .attr('class', 'value')
+            //    .attr('x', function(d) {return (timelineRange(d.start_year) + padding.l);})
+            //    .attr('y', function(d) {return (barHeightScale(d.group) + padding.t - 35);})
+            //    .attr('dy', '0.7em')
+            //   .text(d.movement);
+        })
+        .on('mouseout', function(d) {
+            // Clean up the actions that happened in mouseover
+            var hovered = d3.select(this);
+            hovered.classed('hovered', false);
+            hovered.select('text.value').remove();
+        });
+        */
 
 	//appends movement names to each bar
+    //var barsEnter = bar.enter()
+
+    /*
 	svg.append('g')
 		.selectAll('bar')
 		.data(dataset)
 		.enter()
-		.append('text')
-		.text(function(d) {return d.movement;})
-		.attr('x', function(d) {return (timelineRange(d.start_year) + padding.l);})
-		.attr('y', function(d) {return (barHeightScale(d.group) + padding.t - 35);})
-		.style('opacity', 0); //currently set to 0 to not show labels, trying to figure out how to show
+		//.append('text')
+		//.text(function(d) {return d.movement;})
+		//.attr('x', function(d) {return (timelineRange(d.start_year) + padding.l);})
+		//.attr('y', function(d) {return (barHeightScale(d.group) + padding.t - 35);})
+		//.style('opacity', 100) //currently set to 0 to not show labels, trying to figure out how to show
 		//them only when you over over the bar
+        .on('mouseover', function(d, i) {
+            console.log(d)
+            var hovered = d3.select(this);
+            hovered.classed('hovered', true);
+            hovered.append('text')
+                .text(function(d) {return d.movement;})
+                .attr('x', function(d) {return (timelineRange(d.start_year) + padding.l);})
+                .attr('y', function(d) {return (barHeightScale(d.group) + padding.t - 35);})
+        });
+        */
+
 
 	//adding title to the top
 	svg.append("text")
-        .attr("x", (padding.l))             
+        .attr("x", (padding.l))
         .attr("y", (padding.t / 2))
-        .style("font-size", "30px")  
+        .style("font-size", "30px")
         .text("The Art of War")
 
     //adding description to the top
     svg.append("text")
-        .attr("x", (svgWidth * .68))             
+        .attr("x", (svgWidth * .68))
         .attr("y", (padding.t / 2))
-        .style("font-size", "20px")  
+        .style("font-size", "20px")
         .text("A timeline of art movements across periods of war.")
 
 	});
+
+function updateChart(filterkey) {
+    console.log('Called updateChart');
+    var filteredMovements = movements;
+    console.log(filteredMovements);
+    var bars = chartG.selectAll('.bar')
+        .data(filteredMovements);
+
+    var barsEnter = bars.enter()
+        .append('g')
+        .attr('class', 'bar')
+        .on('mouseover', function(d) {
+            // Use this to select the hovered element
+            var hovered = d3.select(this);
+            // add hovered class to style the group
+            hovered.classed('hovered', true);
+            // add a new text value element to the group
+            hovered.append('text')
+                .attr('class', 'value')
+                .text(d.movement)
+                .attr('x', function(d) {
+                    return (timelineRange(d.start_year) + padding.l);
+                })
+                .attr('y', function(d) {
+                    return (barHeightScale(d.group) + padding.t - 40);
+                });
+        })
+        .on('mouseout', function(d) {
+            // Clean up the actions that happened in mouseover
+            var hovered = d3.select(this);
+            hovered.classed('hovered', false)
+            hovered.select('text.value').remove();
+        });
+
+    bars.merge(barsEnter);
+
+    barsEnter.append('rect')
+        .attr('rx', 5)
+        .attr('ry', 5)
+        .attr('height', barHeight)
+        .attr('width', function(d) {return ((timelineRange(d.end_year)) - (timelineRange(d.start_year)));})
+        .attr('x', function(d) {return (timelineRange(d.start_year) + padding.l);})
+        .attr('y', function(d) {return (barHeightScale(d.group) + padding.t - 35);});
+
+}

@@ -31,10 +31,14 @@ body {
     margin: 0;
 }
 
-.g:hover text {
-    opacity: 1;
-}
-
 #main {
     margin: 20px;
 }
+
+.bar {
+    fill: green;
+}
+
+.bar.hovered {
+    fill: orange;
+};
