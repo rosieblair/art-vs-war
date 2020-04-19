@@ -213,12 +213,13 @@ Promise.all([
             })
             .on('click', function(d) {
                 //shows information popup when you click on the movement bar
-                 tooltip.transition().duration(150)
-                    .text(d.movement + " (" + d.start_year + " - "
-                    + d.end_year + "): " + d.description)
+                tooltip.transition().duration(150)
                     .style("top", (d3.event.pageY) + "px")
                     .style("left", (d3.event.pageX) + "px")
-                    .style("opacity", 0.8);
+                    .style("opacity", 0.75)
+                tooltip.html("<b>" + d.movement + "</b> <i>("
+                    + d.start_year + " - " + d.end_year
+                    + ")</i><br/><br/>" + d.description);
 
                 d3.event.stopPropagation();
             });
