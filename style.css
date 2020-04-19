@@ -31,10 +31,24 @@ body {
     margin: 0;
 }
 
-.g:hover text {
-    opacity: 1;
-}
-
 #main {
     margin: 20px;
 }
+
+.tooltip
+{
+	line-height: normal;
+	font-weight: bolder;
+    text-align: center;
+    max-width: 400px;
+	padding: 12px;
+	background: black;
+    color: white;
+	border-radius: 2px;
+    position: relative;
+}
+
+.bar.hovered {
+    fill: black;
+    stroke: black;
+};

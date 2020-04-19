@@ -1,39 +1,4 @@
 ﻿movement,start_year,end_year,group
-Mannerism,1520,1620,7
-Ukiyo-e,1672,1880,7
-Neo-Impressionism,1884,1935,7
-Abstract Expressionism,1943,1965,7
-The Pictures Generation,1974,1984,7
-Baroque,1584,1723,26
-Neoclassicism,1750,1850,26
-Japonism,1854,1920,26
-Socialist Realism,1922,1980,26
-Dutch Golden Age,1600,1672,40
-Rococo,1702,1780,40
-Orientalism,1810,1890,40
-Ashcan School,1900,1915,40
-Purism,1918,1925,40
-British Pop Art,1947,1969,40
-Neo-Expressionism,1977,1990,40
-Romanticism,1780,1830,30
-Realism,1840,1880,30
-Art Nouveau,1890,1905,30
-Cubism,1907,1922,30
-American Regionalism,1928,1943,30
-Color Field Painting,1947,1965,30
-School of London,1976,1990,30
-Naturalism,1820,1880,17
-Pictorialism,1885,1915,17
-De Stijl,1917,1931,17
-Black Mountain College,1933,1957,17
-Fluxus,1959,1978,17
-Neo-Geo,1980,1990,17
-Hudson River School,1826,1870,25
-Impressionism,1872,1892,25
-Fauvism,1899,1908,25
-Metaphysical Painting,1910,1920,25
-Biomorphism,1924,1955,25
-Contemporary Realism,1960,1970,25
 Barbizon School,1830,1870,1
 Les Nabis,1880,1910,1
 Rayonism,1911,1914,1
@@ -41,89 +6,124 @@ Dada,1916,1924,1
 Social Realism,1929,1957,1
 Happenings,1958,1970,1
 Installation Art,1970,2020,1
-Pre-Raphaelites,1848,1890,12
-Jugendstil,1896,1914,12
-Neo-Plasticism,1917,1944,12
-CoBrA Group,1948,1951,12
-Concrete Poetry,1955,1971,12
-Luminism,1850,1875,35
-American Impressionism,1880,1920,35
-Fourteenth Street School,1920,1940,35
-Art Informel,1945,1950,35
-Neo-Dada,1952,1970,35
-Aesthetic Movement,1860,1900,23
-Die Brücke,1905,1913,23
-Constructivism,1915,1937,23
-Action Painting,1945,1960,23
-Body Art,1961,1980,23
-Arts and Crafts Movement,1860,1920,45
-Harlem Renaissance,1920,1940,45
-Bay Area Painters,1950,1970,45
-Primitivism in Art,1860,1945,8
-Post-Painterly Abstraction,1950,1977,8
-Young British Artists,1987,2020,8
-Peredvizhniki,1863,1923,39
-Surrealism and Surrealist Sculpture,1924,1966,39
-Street and Graffiti Art,1967,2020,39
-Tonalism,1870,1915,31
-Bauhaus,1919,1933,31
-Gutai Group,1954,1972,31
-Yoga,1876,1955,46
-Situationist International,1957,1972,46
-Superflat,2000,2020,46
-Post-Impressionism,1880,1914,13
-New Objectivity,1919,1933,13
-Pop Art,1955,1977,13
+Der Blaue Reiter,1911,1914,2
+Mexican Muralism,1920,1950,2
+Kinetic Art,1954,2020,2
+Magic Realism,1925,2020,3
+Vorticism,1913,1915,4
+Abstract Photography,1916,2020,4
 Symbolism,1880,1910,5
 Orphism,1911,1914,5
 Interwar Classicism,1919,1939,5
 Minimalism,1960,1967,5
 Institutional Critique,1968,2020,5
-Art Deco,1900,1945,38
-Light and Space,1960,1980,38
-Wiener Werkstätte,1903,1932,33
-Washington Color School,1958,1980,33
-Sosuku-hanga,1904,1960,20
-Capitalist Realism,1963,1971,20
-Expressionism,1905,1933,43
-Nouveau Réalisme,1960,1970,43
-Düsseldorf School,1970,2020,43
-Bloomsbury Group Artists,1909,1940,18
-Hard-Edge Painting,1959,1970,18
-Futurism,1909,1944,10
-Viennese Actionism,1960,1971,10
-Modern Photography,1910,1960,24
-Arte Povera,1962,1972,24
 Salon Cubism,1910,1918,6
 Dada and Surreal Photography,1919,1965,6
 Post-Minimalism,1966,2020,6
-Der Blaue Reiter,1911,1914,2
-Mexican Muralism,1920,1950,2
-Kinetic Art,1954,2020,2
+Ukiyo-e,1672,1880,7
+Neo-Impressionism,1884,1935,7
+Abstract Expressionism,1943,1965,7
+The Pictures Generation,1974,1984,7
+Primitivism in Art,1860,1945,8
+Post-Painterly Abstraction,1950,1977,8
+Young British Artists,1987,2020,8
+Queer Art,1870,2020,9
+Futurism,1909,1944,10
+Viennese Actionism,1960,1971,10
+Digital Art,1965,2020,11
+Digital Art,1965,2020,11
+Pre-Raphaelites,1848,1890,12
+Jugendstil,1896,1914,12
+Neo-Plasticism,1917,1944,12
+CoBrA Group,1948,1951,12
+Concrete Poetry,1955,1971,12
+Post-Impressionism,1880,1914,13
+New Objectivity,1919,1933,13
+Pop Art,1955,1977,13
+International Style,1914,1970,14
+Art Brut,1923,2020,14
+Video Art,1965,2020,15
+Video Art,1965,2020,15
+Straight Photography,1910,2020,16
+Naturalism,1820,1880,17
+Pictorialism,1885,1915,17
+De Stijl,1917,1931,17
+Black Mountain College,1933,1957,17
+Fluxus,1959,1978,17
+Neo-Geo,1980,1990,17
+Bloomsbury Group Artists,1909,1940,18
+Hard-Edge Painting,1959,1970,18
+Fashion Photography,1850,2020,19
+Sosuku-hanga,1904,1960,20
+Capitalist Realism,1963,1971,20
+Op Art,1964,2020,21
+Vienna Secession,1897,2020,22
+Aesthetic Movement,1860,1900,23
+Die Brücke,1905,1913,23
+Constructivism,1915,1937,23
+Action Painting,1945,1960,23
+Body Art,1961,1980,23
+Modern Photography,1910,1960,24
+Arte Povera,1962,1972,24
+Hudson River School,1826,1870,25
+Impressionism,1872,1892,25
+Fauvism,1899,1908,25
+Metaphysical Painting,1910,1920,25
+Biomorphism,1924,1955,25
+Contemporary Realism,1960,1970,25
+Baroque,1584,1723,26
+Neoclassicism,1750,1850,26
+Japonism,1854,1920,26
+Socialist Realism,1922,1980,26
+Nihonga,1882,2020,27
+Photorealism,1960,2020,28
+Suprematism,1913,1927,29
+Identity Politics,1960,2020,29
+Romanticism,1780,1830,30
+Realism,1840,1880,30
+Art Nouveau,1890,1905,30
+Cubism,1907,1922,30
+American Regionalism,1928,1943,30
+Color Field Painting,1947,1965,30
+School of London,1976,1990,30
+Tonalism,1870,1915,31
+Bauhaus,1919,1933,31
+Gutai Group,1954,1972,31
+Documentary Photography,1843,2020,32
+Wiener Werkstätte,1903,1932,33
+Washington Color School,1958,1980,33
+Conceptual Art,1965,2020,34
+Luminism,1850,1875,35
+American Impressionism,1880,1920,35
+Fourteenth Street School,1920,1940,35
+Art Informel,1945,1950,35
+Neo-Dada,1952,1970,35
 Russian Futurism,1911,1916,36
 Concrete Art,1930,1959,36
 Earth/Environmental Art,1960,2020,36
+Street Photography,1890,2020,37
+Art Deco,1900,1945,38
+Light and Space,1960,1980,38
+Peredvizhniki,1863,1923,39
+Surrealism and Surrealist Sculpture,1924,1966,39
+Street and Graffiti Art,1967,2020,39
+Rococo,1702,1780,40
+Orientalism,1810,1890,40
+Ashcan School,1900,1915,40
+Purism,1918,1925,40
+British Pop Art,1947,1969,40
+Neo-Expressionism,1977,1990,40
+Performance Art,1960,2020,41
 Synchronism,1912,1924,42
 Group f/64,1932,1935,42
 Feminist Art,1960,2020,42
-Suprematism,1913,1927,29
-Identity Politics,1960,2020,29
-Vorticism,1913,1915,4
-Abstract Photography,1916,2020,4
-International Style,1914,1970,14
-Art Brut,1923,2020,14
-Documentary Photography,1843,2020,32
-Fashion Photography,1850,2020,19
+Expressionism,1905,1933,43
+Nouveau Réalisme,1960,1970,43
+Düsseldorf School,1970,2020,43
 Photojournalism,1853,2020,44
-Queer Art,1870,2020,9
-Nihonga,1882,2020,27
-Street Photography,1890,2020,37
-Vienna Secession,1897,2020,22
-Straight Photography,1910,2020,16
-Magic Realism,1925,2020,3
-Performance Art,1960,2020,41
-Photorealism,1960,2020,28
-Op Art,1964,2020,21
-Conceptual Art,1965,2020,34
-Digital Art,1965,2020,11
-Video Art,1965,2020,15
+Arts and Crafts Movement,1860,1920,45
+Harlem Renaissance,1920,1940,45
+Bay Area Painters,1950,1970,45
+Yoga,1876,1955,46
+Situationist International,1957,1972,46
+Superflat,2000,2020,46
