@@ -5,7 +5,10 @@ function movementDataPreprocessor(row) {
         start_year: +row.start_year,
         end_year: +row.end_year,
         group: +row.group,
-        description: row.description
+        description: row.description,
+        artists: row.artists,
+        artworks: row.artworks,
+        source: row.source
     };
 }
 
@@ -304,7 +307,9 @@ Promise.all([
                     .style("opacity", 0.75)
                 tooltip.html("<b>" + d.movement + "</b> <i>("
                     + d.start_year + " - " + d.end_year
-                    + ")</i><br/><br/>" + d.description);
+                    + ")</i><br/><br/>" + d.description + "<br/><br/>"
+                    + "<u>Famous Artists</u><br/>" + d.artists + "<br/><br/>"
+                    + "<u>Famous Artworks</u><br/>" + d.artworks);
 
                 d3.event.stopPropagation();
             });
