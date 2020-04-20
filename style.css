@@ -35,10 +35,19 @@ body {
     margin: 20px;
 }
 
-.bar {
+.value text {
+    color: black;
+}
+
+.bar rect {
     fill: green;
 }
 
-.bar.hovered {
+
+.bar.hovered rect {
     fill: orange;
 };
+
+
+
+

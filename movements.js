@@ -30,7 +30,6 @@ var barHeightScale = d3.scaleLinear()
 
 //create a group element for appending chart elements
 var chartG = svg.append('g')
-    .attr('transform', 'translate('+[padding.l, padding.t]+')');
 
 d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
 	console.log(dataset);
@@ -61,68 +60,6 @@ d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
 
     updateChart('all-movements')
 
-
-    /*
-    //appends all bars to the timeline
-	svg.append('g')
-		.selectAll('rect')
-		.data(dataset)
-		.enter()
-		.append('rect')
-		.attr('class', 'bar')
-		.attr('x', function(d) {return (timelineRange(d.start_year) + padding.l);})
-		.attr('y', function(d) {return (barHeightScale(d.group) + padding.t - 35);})
-		.attr('rx', 5)
-		.attr('ry', 5)
-		.attr('width', function(d) {return ((timelineRange(d.end_year)) - (timelineRange(d.start_year)));})
-		.attr('height', barHeight);
-		//.style('fill', 'green') //need to figure out how to get different colors
-        //
-        .on('mouseover', function(d, i) {
-            //console.log(d);
-            var hovered = d3.select(this);
-            hovered.classed('hovered', true);
-            //hovered.append('text')
-            //    .attr('class', 'value')
-            //    .attr('x', function(d) {return (timelineRange(d.start_year) + padding.l);})
-            //    .attr('y', function(d) {return (barHeightScale(d.group) + padding.t - 35);})
-            //    .attr('dy', '0.7em')
-            //   .text(d.movement);
-        })
-        .on('mouseout', function(d) {
-            // Clean up the actions that happened in mouseover
-            var hovered = d3.select(this);
-            hovered.classed('hovered', false);
-            hovered.select('text.value').remove();
-        });
-        */
-
-	//appends movement names to each bar
-    //var barsEnter = bar.enter()
-
-    /*
-	svg.append('g')
-		.selectAll('bar')
-		.data(dataset)
-		.enter()
-		//.append('text')
-		//.text(function(d) {return d.movement;})
-		//.attr('x', function(d) {return (timelineRange(d.start_year) + padding.l);})
-		//.attr('y', function(d) {return (barHeightScale(d.group) + padding.t - 35);})
-		//.style('opacity', 100) //currently set to 0 to not show labels, trying to figure out how to show
-		//them only when you over over the bar
-        .on('mouseover', function(d, i) {
-            console.log(d)
-            var hovered = d3.select(this);
-            hovered.classed('hovered', true);
-            hovered.append('text')
-                .text(function(d) {return d.movement;})
-                .attr('x', function(d) {return (timelineRange(d.start_year) + padding.l);})
-                .attr('y', function(d) {return (barHeightScale(d.group) + padding.t - 35);})
-        });
-        */
-
-
 	//adding title to the top
 	svg.append("text")
         .attr("x", (padding.l))
@@ -140,9 +77,11 @@ d3.csv('movements.csv', dataPreprocessor).then(function(dataset) {
 	});
 
 function updateChart(filterkey) {
-    console.log('Called updateChart');
-    var filteredMovements = movements;
-    console.log(filteredMovements);
+    var filteredMovements = movements.filter(function(d){
+        if(d.group < 100) {
+            return d
+        }
+    });
     var bars = chartG.selectAll('.bar')
         .data(filteredMovements);
 
