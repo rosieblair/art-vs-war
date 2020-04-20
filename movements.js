@@ -226,12 +226,20 @@ Promise.all([
                 tooltip.transition().duration(150)
                     .style("top", (d3.event.pageY) + "px")
                     .style("left", (d3.event.pageX) + "px")
-                    .style("opacity", 0.75)
-                tooltip.html("<b>" + d.title + "</b> <i>("
-                    + d.event_start + " - " + d.event_end
-                    + ")</i><br/>" + d.subtitle
-                    + "<br/><br/>" + d.description);
-
+                    .style("opacity", 0.75);
+                if (d.type == "regime") {
+                    tooltip.html("<b>" + d.title + "</b> <i>("
+                        + d.event_start + " - " + d.event_end
+                        + ")</i><br/>Regime Leader: " + d.subtitle
+                        + "<br/><br/><u>Regime Changes</u><br/>"
+                        + d.description);
+                } else {
+                    tooltip.html("<b>" + d.title + "</b> <i>("
+                        + d.event_start + " - " + d.event_end
+                        + ")</i><br/>Conflict Type: " + d.subtitle
+                        + "<br/><br/><u>Reason for Conflict</u><br/>"
+                        + d.description);
+                };
                 d3.event.stopPropagation();
             });
 
