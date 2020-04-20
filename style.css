@@ -49,8 +49,8 @@ body {
 }
 
 .bar.hovered {
-    fill: black;
-    stroke: black;
+    fill: #404040;
+    stroke: #404040;
 }
 
 .line.hovered {
